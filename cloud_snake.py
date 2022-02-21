@@ -36,7 +36,7 @@ def main():
                     url = 'https://s3.{}.amazonaws.com/{}'.format(item, line).strip()
                     x = requests.get(url)
                     print(url, "-", x.status_code)
-                    if x.status_code == 404:
+                    if x.status_code == 404 or x.status_code == 200:
                         break
     
     if region == "EU":
@@ -47,7 +47,7 @@ def main():
                     url = 'https://s3.{}.amazonaws.com/{}'.format(item, line).strip()
                     x = requests.get(url)
                     print(url, "-", x.status_code)
-                    if x.status_code == 404:
+                    if x.status_code == 404 or x.status_code == 200:
                         break
 
     exit()
